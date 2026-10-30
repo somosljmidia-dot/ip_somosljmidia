@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Logo } from './Logo';
 import { AGENCY_INFO } from '../data/agencyData';
-import { X, Mail, Send, Check, Copy } from 'lucide-react';
+import { X, Mail, Check, Copy } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface ContactModalProps {
@@ -13,7 +13,7 @@ interface ContactModalProps {
 export const ContactModal: React.FC<ContactModalProps> = ({
   isOpen,
   onClose,
-  defaultService = 'Presença Digital Completa',
+  defaultService = 'Organização Completa da Presença Digital',
 }) => {
   const [service, setService] = useState(defaultService);
   const [name, setName] = useState('');
@@ -24,20 +24,20 @@ export const ContactModal: React.FC<ContactModalProps> = ({
   if (!isOpen) return null;
 
   const services = [
-    'Gestão de Redes Sociais',
-    'Desenvolvimento de Landing Page',
-    'Criação de Conteúdo Estratégico',
-    'Presença Digital Completa',
-    'Outro Projeto Sob Medida',
+    'Google Maps / Perfil da Empresa no Google',
+    'Redes Sociais & Criação de Conteúdo',
+    'Sites e Páginas Institucionais',
+    'Organização Completa da Presença Digital',
+    'Outro Alinhamento Personalizado',
   ];
 
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    let text = `Olá, equipe LJ Mídias!`;
+    let text = `Olá, equipe da Somos LJ Mídia!`;
     if (name) text += ` Meu nome é ${name}.`;
-    if (brand) text += ` Minha marca/empresa é "${brand}".`;
-    text += ` Tenho interesse no serviço: ${service}.`;
-    if (notes) text += ` Informações adicionais: ${notes}`;
+    if (brand) text += ` Minha empresa/negócio é "${brand}".`;
+    text += ` Gostaria de conversar sobre: ${service}.`;
+    if (notes) text += ` Contexto inicial: ${notes}`;
 
     const url = `https://wa.me/${AGENCY_INFO.whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -61,7 +61,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
           <div>
             <Logo size="sm" variant="gold" />
             <p className="text-xs text-[#D9D1C7] mt-1">
-              Fale diretamente com nossa equipe de estratégia
+              Conversa inicial sem compromisso · Trabalho de verdade
             </p>
           </div>
           <button
@@ -77,7 +77,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({
         <form onSubmit={handleWhatsAppSubmit} className="p-6 sm:p-7 space-y-4">
           <div>
             <label className="block text-xs uppercase tracking-wider font-semibold text-[#073040] mb-1.5">
-              Serviço Desejado
+              Frente de Interesse
             </label>
             <select
               value={service}
@@ -101,33 +101,33 @@ export const ContactModal: React.FC<ContactModalProps> = ({
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Ex: Carlos Eduardo"
+              placeholder="Ex: Mariana Silva"
               className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D9D1C7] text-sm text-[#073040] focus:outline-hidden focus:border-[#D9B97E]"
             />
           </div>
 
           <div>
             <label className="block text-xs uppercase tracking-wider font-semibold text-[#073040] mb-1.5">
-              Sua Empresa ou Instagram
+              Seu Negócio ou Cidade
             </label>
             <input
               type="text"
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
-              placeholder="Ex: @minhamarca ou nomedaempresa.com.br"
+              placeholder="Ex: Padaria do Bairro, Clínica, etc."
               className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D9D1C7] text-sm text-[#073040] focus:outline-hidden focus:border-[#D9B97E]"
             />
           </div>
 
           <div>
             <label className="block text-xs uppercase tracking-wider font-semibold text-[#073040] mb-1.5">
-              Breve resumo do que precisa (opcional)
+              Qual é o momento atual do seu negócio? (opcional)
             </label>
             <textarea
               rows={2}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Conte rapidamente o objetivo da sua marca..."
+              placeholder="Conte brevemente o que você precisa ou qual sua maior dificuldade hoje..."
               className="w-full px-3.5 py-2 rounded-lg bg-white border border-[#D9D1C7] text-sm text-[#073040] focus:outline-hidden focus:border-[#D9B97E] resize-none"
             />
           </div>

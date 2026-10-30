@@ -22,11 +22,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
   const navLinks = [
     { label: 'Início', href: '#inicio' },
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Serviços', href: '#servicos' },
-    { label: 'Portfólio', href: '#portfolio' },
-    { label: 'Diferenciais', href: '#diferenciais' },
-    { label: 'Depoimentos', href: '#depoimentos' },
+    { label: 'O que fazemos', href: '#o-que-fazemos' },
+    { label: 'Como trabalhamos', href: '#como-trabalhamos' },
+    { label: 'Para quem é', href: '#para-quem' },
+    { label: 'Sobre nós', href: '#sobre' },
+    { label: 'Contato', href: '#contato' },
   ];
 
   return (
@@ -37,18 +37,18 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-8">
+          <div className="flex items-center justify-between gap-6 lg:gap-8">
             {/* Zone 1: Brand Wordmark / Official Logo */}
             <a
               href="#inicio"
               className="group whitespace-nowrap shrink-0 transition-opacity hover:opacity-95 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#D9B97E]"
-              aria-label="LJ Mídias - Início"
+              aria-label="Somos LJ Mídia - Início"
             >
               <Logo size="md" variant="gold" />
             </a>
 
             {/* Zone 2: Navigation Links (Azul Petróleo background with Dourado #D9B97E text) */}
-            <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
+            <nav className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -60,14 +60,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
               ))}
             </nav>
 
-            {/* Zone 3: Actions (WhatsApp with Green Logo + Phone + Instagram + Fale Conosco) */}
-            <div className="hidden sm:flex items-center gap-3 shrink-0">
-              {/* WhatsApp direct with official green icon and phone number */}
+            {/* Zone 3: Actions (WhatsApp with Green Logo + Phone + Instagram + Conversar) */}
+            <div className="hidden sm:flex items-center gap-2.5 xl:gap-3 shrink-0">
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#052430] hover:bg-[#041d27] border border-[#D9B97E]/30 text-xs text-[#F2F0EB] transition-all group/wa"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#052430] hover:bg-[#041d27] border border-[#25D366]/40 text-xs text-[#F2F0EB] transition-all group/wa"
                 title={`WhatsApp: ${AGENCY_INFO.whatsappDisplay}`}
               >
                 <WhatsAppIcon className="w-4 h-4 text-[#25D366]" color="#25D366" />
@@ -89,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
               <button
                 onClick={() => onOpenContact()}
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#073040] bg-[#D9B97E] hover:bg-[#c9a96e] active:scale-[0.98] transition-all rounded-md shadow-md whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#D9B97E]"
+                className="inline-flex items-center gap-1.5 px-4 xl:px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#073040] bg-[#D9B97E] hover:bg-[#c9a96e] active:scale-[0.98] transition-all rounded-md shadow-md whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-[#D9B97E]"
               >
                 <span>Fale Conosco</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -97,7 +96,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
             </div>
 
             {/* Mobile Menu Button in Dourado */}
-            <div className="flex sm:hidden items-center">
+            <div className="flex lg:hidden items-center">
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -113,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
 
       {/* Mobile Drawer (Azul Petróleo with Dourado text) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 sm:hidden">
+        <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
           <div
             className="fixed inset-0 bg-[#041d27]/75 backdrop-blur-xs transition-opacity"
@@ -121,8 +120,8 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
           />
 
           {/* Drawer content */}
-          <div className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs bg-[#073040] shadow-2xl p-6 flex flex-col justify-between border-l border-[#D9B97E]/40">
-            <div className="flex flex-col gap-6">
+          <div className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs bg-[#073040] shadow-2xl p-6 flex flex-col justify-between border-l border-[#D9B97E]/40 overflow-y-auto">
+            <div className="flex flex-col gap-5">
               <div className="flex items-center justify-between pb-4 border-b border-[#D9B97E]/30">
                 <Logo size="sm" variant="gold" />
                 <button
@@ -135,13 +134,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                 </button>
               </div>
 
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-1.5">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-3 py-2.5 text-base font-medium text-[#D9B97E] hover:text-[#F2F0EB] hover:bg-[#052430] rounded-md transition-colors"
+                    className="px-3 py-2 text-sm font-medium text-[#D9B97E] hover:text-[#F2F0EB] hover:bg-[#052430] rounded-md transition-colors"
                   >
                     {link.label}
                   </a>
@@ -155,16 +154,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenContact }) => {
                   setMobileMenuOpen(false);
                   onOpenContact();
                 }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold uppercase tracking-wider text-[#073040] bg-[#D9B97E] hover:bg-[#c9a96e] rounded-md transition-all shadow-md"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-[#073040] bg-[#D9B97E] hover:bg-[#c9a96e] rounded-md transition-all shadow-md"
               >
                 <span>Fale Conosco</span>
                 <ArrowUpRight className="w-4 h-4" />
               </button>
+
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-md bg-[#052430] border border-[#25D366]/40 text-xs font-semibold text-[#F2F0EB] hover:bg-[#041d27] transition-colors"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md bg-[#052430] border border-[#25D366]/40 text-xs font-semibold text-[#F2F0EB] hover:bg-[#041d27] transition-colors"
               >
                 <WhatsAppIcon className="w-4 h-4 text-[#25D366]" color="#25D366" />
                 <span>WhatsApp: {AGENCY_INFO.whatsappDisplay}</span>

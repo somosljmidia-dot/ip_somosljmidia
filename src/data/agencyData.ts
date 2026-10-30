@@ -4,202 +4,180 @@ export interface ServiceItem {
   subtitle: string;
   description: string;
   deliverables: string[];
-  idealFor: string;
+  transparencyNote: string;
   badge: string;
 }
 
-export interface PortfolioProject {
-  id: string;
-  title: string;
-  client: string;
-  category: string;
-  type: 'website' | 'instagram';
-  liveUrl: string;
-  imageUrl: string;
-  headline: string;
-  summary: string;
-  scope: string[];
-  impact: string;
-}
-
-export interface Testimonial {
-  id: string;
-  author: string;
-  role: string;
-  client: string;
-  project: string;
-  feedback: string;
-  tag: string;
-}
-
-export interface Differentiator {
+export interface WorkStep {
   number: string;
   title: string;
   description: string;
-  highlight: string;
+}
+
+export interface AudienceProfile {
+  title: string;
+  description: string;
+  tag: string;
 }
 
 export const AGENCY_INFO = {
-  name: 'LJ Mídias',
-  tagline: 'Presença Digital de Alto Padrão',
+  name: 'Somos LJ Mídia',
+  tagline: 'Presença digital com estratégia, organização e transparência. Sem promessas vazias, com trabalho de verdade.',
+  headline: 'Seu negócio merece uma presença digital bem estruturada.',
+  subheadline:
+    'Organizamos sua presença digital para que seu negócio seja encontrado, apresentado e contatado com mais facilidade.',
+  humanMotto: 'Antes do negócio, existe uma história.',
+  humanQuote: 'Não queremos apenas conhecer o seu negócio. Queremos entender a história que fez ele existir.',
+  pacingQuote: 'Cada negócio tem seu tempo. Nosso trabalho começa entendendo isso.',
   email: 'somosljmidia@gmail.com',
   whatsappNumber: '5511917796628',
   whatsappDisplay: '(11) 91779-6628',
   instagramUrl: 'https://www.instagram.com/somosljmidia',
   instagramHandle: '@somosljmidia',
-  location: 'Brasil · Atendimento Nacional & Internacional',
+  location: 'Brasil · Atendimento Próximo & Personalizado',
 };
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'social-media',
-    title: 'Gestão Estratégica de Redes Sociais',
-    subtitle: 'Branding, autoridade e engajamento qualificado',
+    id: 'google-maps',
+    title: 'Google Maps / Perfil da Empresa no Google',
+    subtitle: 'Para que clientes encontrem dados úteis e saibam como chegar e contatar',
     description:
-      'Transformamos o seu perfil no Instagram em uma vitrine de alto valor percebido. Desenvolvemos narrativas visuais sofisticadas, planejamento editorial minucioso e roteiros que conectam seu público e convertem seguidores em clientes fiéis.',
+      'Ajudamos a organizar e apresentar as informações do seu negócio no Google para que quem busca na sua região encontre dados corretos, fotos e saiba exatamente como entrar em contato.',
     deliverables: [
-      'Identidade visual editorial para feed e stories',
-      'Planejamento de conteúdo com calendário estratégico',
-      'Roteirização para Reels de alto alcance e retenção',
-      'Copywriting persuasivo e humanizado',
-      'Análise periódica de métricas e posicionamento de marca',
+      'Organização e revisão completa das informações do perfil',
+      'Atualização de dados validados: endereço, telefone, horários e atendimento',
+      'Orientação para apresentação de fotos, produtos e serviços relevantes',
+      'Apoio na organização de publicações e respostas a avaliações (conforme escopo)',
     ],
-    idealFor: 'Marcas, lojas e profissionais que buscam prestígio e autoridade sólida no digital.',
-    badge: 'Redes Sociais',
+    transparencyNote:
+      'Transparência: Não prometemos 1º lugar ou domínio do mapa. A visibilidade depende de múltiplos fatores que não controlamos, mas garantimos informações claras, organizadas e confiáveis.',
+    badge: 'Local & Busca',
   },
   {
-    id: 'landing-pages',
-    title: 'Desenvolvimento de Landing Pages & Sites',
-    subtitle: 'Design sob medida, performance extrema e conversão direta',
+    id: 'redes-sociais',
+    title: 'Redes Sociais',
+    subtitle: 'Comunicação com clareza, consistência e identidade própria',
     description:
-      'Criamos páginas institucionais e landing pages de venda com estética editorial exclusiva. Cada seção é estruturada para guiar o visitante até a ação desejada, com carregamento ultrarrápido, experiência mobile perfeita e integração com WhatsApp.',
+      'Planejamento e criação de conteúdo estratégico para ajudar o seu negócio a se posicionar sem fórmulas prontas, comunicando o que sua empresa realmente entrega de valor.',
     deliverables: [
-      'Design responsivo e layout 100% exclusivo (sem templates prontos)',
-      'Arquitetura de persuasão voltada para vendas e captação de leads',
-      'Integração direta com WhatsApp e formulários inteligentes',
-      'Otimização avançada de performance (Core Web Vitals) e SEO',
-      'Domínio próprio, certificado SSL e suporte de implantação',
+      'Planejamento de pautas e organização de calendário editorial coerente',
+      'Criação de posts, carrosséis explicativos e peças visuais limpas',
+      'Roteiros simples para vídeos e Reels, quando alinhados ao escopo contratado',
+      'Legendas com propósito, chamadas para ação claras e comunicação humanizada',
     ],
-    idealFor: 'Empresas que desejam transformar tráfego em vendas reais e fechar novos negócios.',
-    badge: 'Landing Pages & Web',
+    transparencyNote:
+      'Transparência: Não vendemos viralização ou fórmulas mágicas de seguidores. Frequência, canais e volume de peças são definidos com base na sua rotina real.',
+    badge: 'Conteúdo & Identidade',
   },
   {
-    id: 'content-creation',
-    title: 'Criação de Conteúdo Estratégico & Direção de Arte',
-    subtitle: 'Comunicação visual e narrativa alinhadas à essência do seu negócio',
+    id: 'sites-paginas',
+    title: 'Sites e Páginas Institucionais',
+    subtitle: 'Apresentação profissional que facilita o caminho do visitante até o contato',
     description:
-      'Produção e curadoria de materiais gráficos e digitais com olhar editorial refinado. Definimos a paleta, tipografia, tom de voz e estilo fotográfico para que sua marca seja inconfundível em qualquer ponto de contato.',
+      'Criação e organização de páginas institucionais ou landing pages objetivas, estruturadas para apresentar seu negócio com clareza e direcionar o cliente até o WhatsApp.',
     deliverables: [
-      'Direção de arte e curadoria estética de fotos e vídeos',
-      'Criação de materiais promocionais e apresentações comerciais',
-      'Brand guidelines digitais (fontes, cores, texturas e estilo)',
-      'Storytelling que valoriza a história e os diferenciais do seu produto',
+      'Estruturação da página inicial e seções institucionais essenciais',
+      'Organização de textos objetivos, imagens e dados de contato',
+      'Páginas institucionais ou landing pages enxutas conforme escopo',
+      'Botões e links estratégicos direcionando para WhatsApp e canais oficiais',
     ],
-    idealFor: 'Negócios que querem se desvincular de designs amadores e cobrar o valor justo pelo que fazem.',
-    badge: 'Criação & Branding',
+    transparencyNote:
+      'Transparência: Alinhamos previamente a plataforma, quantidade de páginas, domínio, hospedagem e limites técnicos, garantindo uma solução funcional e sem surpresas.',
+    badge: 'Web & Contato',
   },
 ];
 
-export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
-  {
-    id: 'mk3-golf-parts',
-    title: 'MK3 Golf Parts',
-    client: 'MK3 Golf Parts Brasil',
-    category: 'Desenvolvimento Web & E-commerce',
-    type: 'website',
-    liveUrl: 'https://mk3golfparts.com.br/',
-    imageUrl: '/src/assets/images/portfolio_mk3_showcase_1793380983140.jpg',
-    headline: 'E-commerce especializado para entusiastas do clássico Volkswagen Golf MK3',
-    summary:
-      'Desenvolvimento de uma plataforma veloz, segura e altamente intuitiva para catálogo e venda de peças automotivas raras e de alta performance. O layout dark sofisticado respeita o universo automotivo clássico, com navegação fluida em dispositivos móveis e canal direto de checkout e WhatsApp.',
-    scope: [
-      'Estruturação completa de catálogo e categorias',
-      'Design editorial moderno e responsivo',
-      'Integração de pedidos e suporte via WhatsApp',
-      'Otimização de SEO e velocidade para mobile',
-    ],
-    impact: 'Catálogo moderno e estruturado que elevou a autoridade da marca e agilizou o fechamento de pedidos online.',
-  },
-  {
-    id: 'fluorita-arco-iris',
-    title: 'Fluorita Arco-Íris',
-    client: 'Fluorita Arco-Íris',
-    category: 'Gestão de Redes Sociais & Branding',
-    type: 'instagram',
-    liveUrl: 'https://www.instagram.com/fluoritaarcoiris',
-    imageUrl: '/src/assets/images/portfolio_fluorita_showcase_1793380983905.jpg',
-    headline: 'Posicionamento estético e curadoria visual para marca de cristais e bem-estar',
-    summary:
-      'Gestão estratégica do Instagram com identidade visual harmoniosa, valorizando a beleza natural e a espiritualidade dos cristais. Criação de linha editorial com posts educativos, reels contemplativos e copywriting que acolhe a comunidade e incentiva compras diretas.',
-    scope: [
-      'Curadoria fotográfica e paleta visual holística',
-      'Planejamento de postagens e roteiros para Reels',
-      'Copywriting e atendimento empático nos canais digitais',
-      'Posicionamento de marca premium e conexão genuína',
-    ],
-    impact: 'Visual coeso e acolhedor que aumentou o engajamento diário e impulsionou as mensagens de consulta e encomendas.',
-  },
-];
-
-export const DIFFERENTIATORS: Differentiator[] = [
+export const HOW_WE_WORK: WorkStep[] = [
   {
     number: '01',
-    title: 'Atendimento Personalizado e Próximo',
+    title: 'Conversa Inicial',
     description:
-      'Trabalhamos lado a lado com você. Sem intermediários ou respostas automáticas vazias: alinhamos objetivos e ajustamos rotas com agilidade e transparência.',
-    highlight: 'Proximidade & Transparência',
+      'Conhecer a pessoa, a história por trás da empresa, o momento atual e o que motivou a procurar ajuda.',
   },
   {
     number: '02',
-    title: 'Olhar Estético & Editorial Apurado',
+    title: 'Levantamento',
     description:
-      'Fugimos do comum e dos templates genéricos que poluem a internet. Cada tipografia, espaçamento e imagem é pensado para transmitir elegância e alto valor à sua marca.',
-    highlight: 'Design Sofisticado',
+      'Entender o que já existe, o que está faltando, quais são os recursos disponíveis e quais as prioridades reais.',
   },
   {
     number: '03',
-    title: 'Foco Absoluto em Conversão & Autoridade',
+    title: 'Direcionamento',
     description:
-      'Beleza sem resultado não sustenta negócios. Nossas criações equilibram estética impecável com psicologia de vendas para gerar leads e clientes reais no seu WhatsApp.',
-    highlight: 'Resultados Comerciais',
+      'Apresentar possibilidades realistas, explicando com sinceridade o que faz sentido agora e o que pode ficar para depois.',
   },
   {
     number: '04',
-    title: 'Pontualidade e Execução Técnica Sem Falhas',
+    title: 'Proposta Personalizada',
     description:
-      'Cronogramas respeitados à risca, páginas velozes que não travam e processos bem orquestrados para você ter tranquilidade e focar na gestão da sua empresa.',
-    highlight: 'Rigor Técnico & Pontualidade',
+      'Descrever com precisão entregas, prazos, responsabilidades mútuas, investimento e os limites do serviço contratado.',
+  },
+  {
+    number: '05',
+    title: 'Execução com Alinhamento',
+    description:
+      'Desenvolver o trabalho mantendo contato próximo, com aprovações combinadas e respeito ao tempo do negócio.',
+  },
+  {
+    number: '06',
+    title: 'Entrega e Continuidade',
+    description:
+      'Apresentar tudo o que foi feito com clareza e, quando contratado, combinar rotinas de manutenção ou próximos passos.',
   },
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
+export const FOR_WHOM: AudienceProfile[] = [
   {
-    id: 'mk3-review',
-    author: 'Equipe MK3 Golf Parts',
-    role: 'Direção Comercial',
-    client: 'MK3 Golf Parts',
-    project: 'Desenvolvimento do Site Oficial (mk3golfparts.com.br)',
-    feedback:
-      'A LJ Mídias entendeu exatamente o nível de detalhe que os amantes de clássicos exigem. O site ficou rápido, com visual impecável e os clientes agora encontram as peças com facilidade e nos chamam diretamente no WhatsApp para fechar. O profissionalismo fez toda a diferença.',
-    tag: 'Site & E-commerce',
+    title: 'Dando os Primeiros Passos',
+    description:
+      'Para quem acabou de abrir as portas ou formalizar o negócio e precisa de uma presença digital limpa, correta e profissional desde o início.',
+    tag: 'Novos Negócios',
   },
   {
-    id: 'fluorita-review',
-    author: 'Gestão Fluorita Arco-Íris',
-    role: 'Fundadora & Curadora',
-    client: 'Fluorita Arco-Íris',
-    project: 'Gestão de Instagram & Criação de Conteúdo (@fluoritaarcoiris)',
-    feedback:
-      'Encontrar uma agência que conseguisse traduzir a energia e a delicadeza dos nossos cristais foi um divisor de águas. O feed da Fluorita ficou com uma estética maravilhosa, recebemos elogios diários e as vendas aumentaram muito através das publicações.',
-    tag: 'Redes Sociais & Identidade',
+    title: 'Recomeçando ou Reposicionando',
+    description:
+      'Para quem mudou de rumo, reformulou serviços ou precisa atualizar seus canais digitais para refletir a nova fase da empresa.',
+    tag: 'Novos Momentos',
+  },
+  {
+    title: 'Negócios Familiares e Tradicionais',
+    description:
+      'Para empresas com anos de história, excelente produto ou serviço no mundo físico, que precisam traduzir esse valor no ambiente online.',
+    tag: 'Trajetórias Reais',
+  },
+  {
+    title: 'Prestadores de Serviços & Autônomos',
+    description:
+      'Para quem precisa ser encontrado no Google Maps, passar credibilidade no Instagram e facilitar o agendamento de clientes no WhatsApp.',
+    tag: 'Serviços & Comércio',
+  },
+];
+
+export const TRANSPARENCY_LIMITS = [
+  {
+    label: 'Sem Fórmulas Mágicas',
+    detail: 'Não prometemos viralização, crescimento artificial de seguidores ou vendas automáticas.',
+  },
+  {
+    label: 'Sem Falso Domínio de Buscas',
+    detail: 'Não prometemos 1º lugar no Google ou domínio do mapa; a visibilidade depende de múltiplos fatores.',
+  },
+  {
+    label: 'Sem Pacotes Engessados',
+    detail: 'Não empurramos serviços desnecessários. Toda proposta é pensada para a realidade e o bolso do cliente.',
+  },
+  {
+    label: 'Compromisso com a Verdade',
+    detail: 'Só oferecemos o que conseguimos executar com qualidade, pontualidade e transparência de escopo.',
   },
 ];
 
 export function getWhatsAppUrl(serviceTitle?: string, clientName?: string) {
   const greeting = clientName ? `Olá! Me chamo ${encodeURIComponent(clientName)}.` : 'Olá!';
   const serviceText = serviceTitle
-    ? ` Gostaria de saber mais sobre o serviço de ${encodeURIComponent(serviceTitle)} da LJ Mídias.`
-    : ' Gostaria de solicitar um diagnóstico para a presença digital da minha marca com a LJ Mídias.';
+    ? ` Gostaria de conversar com a Somos LJ Mídia sobre ${encodeURIComponent(serviceTitle)}.`
+    : ' Gostaria de conversar com a Somos LJ Mídia sobre a presença digital do meu negócio.';
   const message = `${greeting}${serviceText}`;
   return `https://wa.me/${AGENCY_INFO.whatsappNumber}?text=${message}`;
 }

@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { AGENCY_INFO, getWhatsAppUrl } from '../data/agencyData';
-import { Mail, Copy, Check, Send, Sparkles, Clock, ShieldCheck, Instagram } from 'lucide-react';
+import { Mail, Copy, Check, MessageCircle, Instagram, Clock, ShieldCheck, Heart } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
+import { BotanicalBranch, DelicateConstellation } from './BotanicalAccents';
 
 export const FinalCTA: React.FC = () => {
-  const [selectedService, setSelectedService] = useState('Gestão de Redes Sociais');
+  const [selectedService, setSelectedService] = useState('Google Maps / Perfil Google');
   const [clientName, setClientName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const serviceOptions = [
-    'Gestão de Redes Sociais',
-    'Desenvolvimento de Landing Page',
-    'Criação de Conteúdo Estratégico',
-    'Presença Digital Completa',
+    'Google Maps / Perfil Google',
+    'Redes Sociais & Conteúdo',
+    'Sites e Páginas Institucionais',
+    'Organização Completa da Presença Digital',
   ];
 
   const handleCopyEmail = () => {
@@ -23,66 +24,67 @@ export const FinalCTA: React.FC = () => {
   };
 
   const generateWhatsAppMessage = () => {
-    let msg = `Olá, equipe da LJ Mídias!`;
+    let msg = `Olá, equipe da Somos LJ Mídia!`;
     if (clientName) msg += ` Meu nome é ${clientName}.`;
     if (companyName) msg += ` Tenho um negócio chamado "${companyName}".`;
-    msg += ` Gostaria de saber mais sobre o serviço de ${selectedService} e agendar uma conversa sobre a minha presença digital.`;
+    msg += ` Gostaria de conversar sobre ${selectedService} e entender como podemos organizar minha presença digital.`;
     return `https://wa.me/${AGENCY_INFO.whatsappNumber}?text=${encodeURIComponent(msg)}`;
   };
 
   return (
     <section id="contato" className="py-24 bg-[#073040] text-[#F2F0EB] relative overflow-hidden">
-      {/* Decorative luxury background lighting */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D9B97E]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#041d27] rounded-full blur-2xl pointer-events-none" />
+      {/* Decorative luxury background lighting and botanical accents */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D9B97E]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-4 left-6 pointer-events-none opacity-20">
+        <BotanicalBranch className="w-32 h-32 text-[#D9B97E]" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Value Proposition & Contact Details */}
+          {/* Left Column: Invitation & Sincerity */}
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-2.5 text-xs uppercase tracking-[0.25em] font-semibold text-[#D9B97E] mb-3">
+            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] font-semibold text-[#D9B97E] mb-3">
               <span className="w-5 h-[1.5px] bg-[#D9B97E]" />
-              <span>Próximo Passo</span>
+              <span>Vamos Conversar</span>
             </div>
 
             <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F2F0EB] leading-tight mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#F2F0EB] leading-tight mb-5"
               style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
             >
-              Pronto para transformar a presença digital do seu negócio?
+              Chame a Somos LJ Mídia para uma conversa.
             </h2>
 
             <p className="text-base sm:text-lg text-[#D9D1C7] leading-relaxed mb-8 font-light">
-              Dê adeus a publicações genéricas e páginas que não convertem. Converse diretamente conosco
-              pelo WhatsApp e receba uma análise inicial personalizada para a sua marca.
+              Sem compromisso: queremos conhecer seu negócio, entender a sua história, suas prioridades e avaliar com sinceridade como podemos ajudar.
             </p>
 
-            {/* Quick Guarantees */}
+            {/* Commitments */}
             <div className="space-y-4 mb-8 pt-6 border-t border-[#D9B97E]/20">
               <div className="flex items-center gap-3 text-sm text-[#F2F0EB]">
-                <Clock className="w-5 h-5 text-[#D9B97E] shrink-0" />
-                <span>Atendimento ágil com resposta em poucas horas úteis.</span>
+                <Heart className="w-4 h-4 text-[#D9B97E] shrink-0" />
+                <span>Atendimento humanizado diretamente com quem planeja e executa.</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-[#F2F0EB]">
-                <ShieldCheck className="w-5 h-5 text-[#D9B97E] shrink-0" />
-                <span>Proposta personalizada sem compromisso com plano de ação claro.</span>
+                <ShieldCheck className="w-4 h-4 text-[#D9B97E] shrink-0" />
+                <span>Propostas coerentes com a realidade e o orçamento do seu negócio.</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-[#F2F0EB]">
-                <Sparkles className="w-5 h-5 text-[#D9B97E] shrink-0" />
-                <span>Design editorial exclusivo desenhado para a identidade da sua marca.</span>
+                <Clock className="w-4 h-4 text-[#D9B97E] shrink-0" />
+                <span>Respeito ao seu tempo: conversa prática e sem jargões complicados.</span>
               </div>
             </div>
 
-            {/* Direct Phone Highlight */}
-            <div className="mb-4 p-4 rounded-xl bg-[#041d27] border border-[#25D366]/30 flex items-center justify-between">
+            {/* Direct Phone Highlight Card */}
+            <div className="mb-6 p-4 rounded-xl bg-[#041d27] border border-[#25D366]/30 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#25D366]/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#25D366]/20 flex items-center justify-center">
                   <WhatsAppIcon className="w-5 h-5 text-[#25D366]" color="#25D366" />
                 </div>
                 <div>
                   <span className="block text-[11px] uppercase tracking-wider text-[#A69586]">
-                    WhatsApp Oficial LJ Mídias
+                    WhatsApp Oficial Somos LJ Mídia
                   </span>
                   <span className="text-sm sm:text-base font-bold text-[#F2F0EB]">
                     {AGENCY_INFO.whatsappDisplay}
@@ -93,7 +95,7 @@ export const FinalCTA: React.FC = () => {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3.5 py-1.5 rounded-md bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold transition-all shadow-sm"
+                className="px-4 py-2 rounded-md bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-semibold transition-all shadow-sm"
               >
                 Chamar Agora
               </a>
@@ -145,7 +147,7 @@ export const FinalCTA: React.FC = () => {
                     Iniciar Conversa no WhatsApp
                   </h3>
                   <p className="text-xs text-[#D9D1C7]">
-                    Personalize sua mensagem ou fale com um estrategista agora.
+                    Conte um pouco sobre seu negócio e comece sem compromisso.
                   </p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0 shadow-md">
@@ -156,7 +158,7 @@ export const FinalCTA: React.FC = () => {
               {/* Service selector */}
               <div className="mb-5">
                 <label className="block text-xs uppercase tracking-wider font-semibold text-[#D9D1C7] mb-2">
-                  Qual solução melhor atende sua necessidade?
+                  Qual frente você gostaria de conversar primeiro?
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {serviceOptions.map((opt) => {
@@ -188,21 +190,21 @@ export const FinalCTA: React.FC = () => {
                   type="text"
                   value={clientName}
                   onChange={(e) => setClientName(e.target.value)}
-                  placeholder="Ex: Mariana Silveira"
+                  placeholder="Ex: Carlos Eduardo"
                   className="w-full px-4 py-2.5 rounded-lg bg-[#073040] border border-[#D9D1C7]/30 text-[#F2F0EB] text-sm focus:outline-hidden focus:border-[#D9B97E] transition-colors placeholder:text-[#A69586]"
                 />
               </div>
 
               {/* Input: Company/Brand */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <label className="block text-xs uppercase tracking-wider font-semibold text-[#D9D1C7] mb-1.5">
-                  Sua Marca ou Segmento (opcional)
+                  Nome do seu Negócio ou Cidade
                 </label>
                 <input
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  placeholder="Ex: Boutique de Moda, Clínica, etc."
+                  placeholder="Ex: Oficina Mecânica, Ateliê, Consultório..."
                   className="w-full px-4 py-2.5 rounded-lg bg-[#073040] border border-[#D9D1C7]/30 text-[#F2F0EB] text-sm focus:outline-hidden focus:border-[#D9B97E] transition-colors placeholder:text-[#A69586]"
                 />
               </div>
@@ -210,12 +212,12 @@ export const FinalCTA: React.FC = () => {
               {/* Live Message Preview */}
               <div className="mb-6 p-3.5 rounded-lg bg-[#073040]/80 border border-[#D9D1C7]/20 text-xs text-[#D9D1C7]/90 italic">
                 <span className="font-semibold text-[#D9B97E] not-italic block mb-1">
-                  Mensagem pré-formatada:
+                  Mensagem inicial:
                 </span>
-                "Olá, equipe da LJ Mídias!
+                "Olá, equipe da Somos LJ Mídia!
                 {clientName ? ` Meu nome é ${clientName}.` : ''}
                 {companyName ? ` Tenho um negócio chamado "${companyName}".` : ''}
-                {` Gostaria de saber mais sobre o serviço de ${selectedService} e agendar uma conversa.`}"
+                {` Gostaria de conversar sobre ${selectedService} e entender como podemos organizar minha presença digital.`}"
               </div>
 
               {/* WhatsApp Action Button */}

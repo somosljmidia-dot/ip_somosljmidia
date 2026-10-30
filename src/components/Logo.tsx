@@ -26,15 +26,15 @@ export const Logo: React.FC<LogoProps> = ({
   };
 
   const textSizes = {
-    sm: 'text-base',
-    md: 'text-xl',
-    lg: 'text-2xl',
+    sm: 'text-sm font-semibold tracking-wide',
+    md: 'text-lg sm:text-xl font-bold tracking-wider',
+    lg: 'text-xl sm:text-2xl font-bold tracking-wider',
   };
 
   const subSizes = {
     sm: 'text-[9px] tracking-[0.25em]',
-    md: 'text-[10px] tracking-[0.3em]',
-    lg: 'text-xs tracking-[0.35em]',
+    md: 'text-[10px] tracking-[0.28em]',
+    lg: 'text-xs tracking-[0.3em]',
   };
 
   return (
@@ -43,19 +43,19 @@ export const Logo: React.FC<LogoProps> = ({
       <div className="relative rounded-lg overflow-hidden border border-[#D9B97E]/50 shadow-sm bg-[#F2F0EB] flex items-center justify-center shrink-0 p-0.5 hover:border-[#D9B97E] transition-colors">
         <img
           src="/assets/aistudio/WhatsApp_Image_2026-07-22_at_10.37.18_466adf6e.jpeg"
-          alt="Logotipo Oficial LJ Mídias"
+          alt="Logotipo Oficial Somos LJ Mídia"
           className={`${imageHeights[size]} object-cover rounded-md`}
         />
       </div>
 
-      {/* Typography Wordmark in Dourado / Light / Dark */}
+      {/* Typography Wordmark: SOMOS LJ MÍDIA */}
       {showText && (
         <div className="flex flex-col">
           <span
-            className={`font-serif tracking-wider font-bold leading-none ${textColor} ${textSizes[size]}`}
+            className={`font-serif leading-none ${textColor} ${textSizes[size]}`}
             style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
           >
-            LJ MÍDIAS
+            SOMOS LJ MÍDIA
           </span>
           <span className={`font-sans font-medium uppercase ${subColor} ${subSizes[size]} mt-0.5`}>
             Presença Digital

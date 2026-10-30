@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { About } from './components/About';
+import { HumanStory } from './components/HumanStory';
 import { Services } from './components/Services';
-import { Portfolio } from './components/Portfolio';
-import { Differentiators } from './components/Differentiators';
-import { Testimonials } from './components/Testimonials';
+import { HowWeWork } from './components/HowWeWork';
+import { ForWhomAndTransparency } from './components/ForWhomAndTransparency';
+import { About } from './components/About';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { ContactModal } from './components/ContactModal';
@@ -13,7 +13,9 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [selectedServiceForModal, setSelectedServiceForModal] = useState<string>('Presença Digital Completa');
+  const [selectedServiceForModal, setSelectedServiceForModal] = useState<string>(
+    'Organização Completa da Presença Digital'
+  );
 
   const handleOpenContact = (service?: string) => {
     if (service) {
@@ -28,43 +30,43 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F2F0EB] text-[#073040] font-sans flex flex-col selection:bg-[#D9B97E]/30 selection:text-[#073040]">
-      {/* 1. Header with logo, navigation and CTA */}
+      {/* 1. Header with logo, navigation, and channels */}
       <Header onOpenContact={handleOpenContact} />
 
       <main className="flex-grow">
-        {/* 2. Hero Section with high-impact editorial imagery and proposition */}
+        {/* 2. Hero: Apresentação objetiva, frase principal e resumo */}
         <Hero onOpenContact={handleOpenContact} />
 
-        {/* 3. About Section with agency story, creative philosophy & methodology */}
-        <About />
+        {/* 3. Diferencial Humano: "Antes do negócio, existe uma história" */}
+        <HumanStory />
 
-        {/* 4. Core Services (Redes Sociais, Landing Pages & Conteúdo Estratégico) */}
+        {/* 4. O Que Fazemos: Google Maps, Redes Sociais, Sites e Páginas */}
         <Services onSelectService={handleOpenContact} />
 
-        {/* 5. Real Portfolio Cases (MK3 Golf Parts and Fluorita Arco-Íris) */}
-        <Portfolio />
+        {/* 5. Como Trabalhamos: Os 6 passos do método Somos LJ Mídia */}
+        <HowWeWork />
 
-        {/* 6. Agency Differentiators (Editorial numbered pillars) */}
-        <Differentiators />
+        {/* 6. Para Quem Trabalhamos & Limites de Atuação / Transparência */}
+        <ForWhomAndTransparency />
 
-        {/* 7. Client Testimonials & Verifiable Partner Reviews */}
-        <Testimonials />
+        {/* 7. Sobre a Somos LJ Mídia: Nossa essência e compromisso */}
+        <About />
 
-        {/* 8. Final Conversion CTA with Interactive WhatsApp Builder */}
+        {/* 8. Contato: Convite sincero para conversar sem compromisso */}
         <FinalCTA />
       </main>
 
-      {/* 9. Elegant Footer with branding, contacts and navigation */}
+      {/* 9. Rodapé Oficial */}
       <Footer />
 
-      {/* Interactive Consultation Modal */}
+      {/* Modal de Conversa e Alinhamento Inicial */}
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={handleCloseContact}
         defaultService={selectedServiceForModal}
       />
 
-      {/* Non-intrusive floating WhatsApp action */}
+      {/* Botão Flutuante Oficial do WhatsApp */}
       <FloatingWhatsApp />
     </div>
   );
