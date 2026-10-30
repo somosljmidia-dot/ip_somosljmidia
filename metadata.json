@@ -1,0 +1,6 @@
+{
+  "name": "LJ Mídias - Presença Digital & Estratégia",
+  "description": "Agência de presença digital especializada em criação de conteúdo, gestão de redes sociais e desenvolvimento de landing pages de alta conversão.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
